@@ -8,6 +8,7 @@ from keras.callbacks import ReduceLROnPlateau
 from keras.preprocessing.image import ImageDataGenerator
 from keras.regularizers import l2
 from keras.models import Model
+from keras.utils import plot_model
 import numpy as np
 import os
 import matplotlib.pyplot as plt
@@ -160,6 +161,7 @@ def resnet_v1(input_shape, depth, num_classes=10):
 
 
 model = resnet_v1(input_shape=input_shape, depth=depth, num_classes=num_classes)
+plot_model(model, to_file = 'model_test.png', show_shapes = True, show_dtype = True)
 model.compile(loss='categorical_crossentropy',
               optimizer=Adam(lr=lr_schedule(0)),
               metrics=['accuracy'])
