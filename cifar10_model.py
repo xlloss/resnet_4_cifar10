@@ -207,7 +207,7 @@ datagen = ImageDataGenerator(
         # epsilon for ZCA whitening
         zca_epsilon=1e-06,
         # randomly rotate images in the range (deg 0 to 180)
-        rotation_range=0,
+        rotation_range=90,
         # randomly shift images horizontally
         width_shift_range=0.1,
         # randomly shift images vertically
